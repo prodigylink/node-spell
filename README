@@ -1,0 +1,26 @@
+Hi! This is my first node.js extension. :-)
+
+NOTE: This libhunspell binding for node is currently the Minimal Viable Product of software.
+
+The dictionary files you need and a working example are in test/
+
+You will probably need to modify the 'Hunspell * pMS= new Hunspell();' line
+if you need to support different languages or want to change the path of the dictionary files.
+
+This will be fixed soon.
+
+You will need the hunspell library and hunspell-devel installed.
+
+Make sure the path in ./wscript is correct as well.
+
+Routines:
+
+Currently, node-spell only has one very simple function called quickspellcheck(). It accepts a string with one word in it as a parameter.
+
+If you need to spellcheck text with multiple words in it, you will need to loop through each word, checking it with quickspellcheck(). See example in test/
+
+Compiling:
+
+node-waf configure && node-waf build
+
+Your needed module will be in build/default/
